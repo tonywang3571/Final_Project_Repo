@@ -19,7 +19,7 @@ add ALL files changed to be commited and pushed (git add .) <-- this is what I n
 
 6. Pull request to merge into 'master' branch (I use master not main, no real difference just what's easier for me).  
 (Follow the images below. Basically you'll click the 'create pull request' button and add messages/notes and comments)
-<img src="git_guide_images/newchanges.PNG">  
+<img src="git_guide_images/newchange.PNG">  
 <img src="git_guide_images/pullrequest1.PNG">  
 <img src="git_guide_images/pullrequest2.PNG">  
 <img src="git_guide_images/pullrequest3.PNG">  
