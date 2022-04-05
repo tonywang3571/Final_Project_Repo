@@ -8,7 +8,7 @@ Group Final Project
 
 3. Create personal branch (git checkout -b branch_name)  
 (i.e. git checkout -b tony)  
-- Switch between branches, probably don't need to do this very often (git checkout branch_name)  
+- Switch between branches (git checkout branch_name)  
 (i.e. git checkout tony)  
 
 4. Start working and make edits under your personal branch!  
@@ -26,3 +26,13 @@ add ALL files changed to be commited and pushed (git add .) <-- this is what I n
 <img src="git_guide_images/pullrequest1.PNG">  
 <img src="git_guide_images/pullrequest2.PNG">  
 <img src="git_guide_images/pullrequest3.PNG">  
+
+**After a pull request was merged to master branch.**
+
+7. Switch back to master branch (git checkout branch_name) (i.e. git checkout master)  
+
+8. Update local repo with current repo on github (git pull repo_url)  
+(i.e. git pull git@github.com:tonywang3571/Final_Project_Repo.git)  
+
+9. Switch back to personal branch to work again (git checkout -b branch_name)  
+(i.e. git checkout -b tony)
