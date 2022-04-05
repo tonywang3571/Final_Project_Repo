@@ -36,3 +36,5 @@ add ALL files changed to be commited and pushed (git add .) <-- this is what I n
 
 9. Switch back to personal branch to work again (git checkout -b branch_name)  
 (i.e. git checkout -b tony)
+
+10. Laura test push in Scott's branch
