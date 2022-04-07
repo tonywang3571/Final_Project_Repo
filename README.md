@@ -1,38 +1,42 @@
-# Final_Project_Repo  
-Group Final Project  
+# Research Statement
+This document describes the anticipated outcome of this project, and answers the following for deliverable 1:
+* Document reasoning for selecting dataset (Purpose/Thesis)
+* Provide description of source data (Data)
+* Detail questions the team hopes to answer with the data (Goals)
 
-1. Create new folder and initialize folder as repository (git init)  
+## Purpose/Thesis
+We will build a machine learning model from a Zillow dataset that predicts potential house sale price. The data from that model will then pass into a user-facing app that functions as a feasibility calculator for renting out properties on airbnb.
 
-2. Clone "Final_Project_Repo" from github (git pull repo_url)  
-(i.e. git pull git@github.com:tonywang3571/Final_Project_Repo.git)  
+## Goals
+The goals of this project include:
+* Predict the sale price of a property via a machine learning model
+* Calculate the potential airbnb rental price of a property
+   * Based on other properties in the area
+   * Can be tied to Zillow ML model output pass through
+   * May look into additional machine learning model that is placed on the airbnb dataset
+* Visualization/Marketing
+   * Heatmap for market saturation
+   * Heatmap for rental/sale price
+* Optional: Determine applicability of model to other markets
+   * Ex. If the model is accurate for the Portland market, is the same model also accurate in Chicago, or would changes need to be made?
+* Optional: Additional machine learning model on airbnb data
 
-3. Create personal branch (git checkout -b branch_name)  
-(i.e. git checkout -b tony)  
-- Switch between branches (git checkout branch_name)  
-(i.e. git checkout tony)  
+## Data
+We have chosen the below datasets based on the:
+* Number of data points
+* Completeness of data
+* Ability to link the datasets (based on column names & location overlap - Portland)
 
-4. Start working and make edits under your personal branch!  
+### Datasets
+**airbnb Data**
+* Portland_airbnb_InsideAirbnb
+   * Taken from: http://insideairbnb.com/get-the-data/
+* Description of Data
+   * InsideAirbnb provides quarterly data for the last year for each region from airbnb. This dataset provides assumed active listings as of December 20, 2021 for Portland, Oregon.
 
-5. Push often after making edits and working on the project.  
-- check status of your working branch (git status)
-- add 1 file changed to be commited and pushed (git add file_name) (i.e. git add README.md) OR  
-add ALL files changed to be commited and pushed (git add .) <-- this is what I normally do  
-- commit changes with a message/note (git commit -m "message/note")
-- push changes (git push repo_url) (i.e. git push git@github.com:tonywang3571/Final_Project_Repo.git)
-
-6. Pull request to merge into 'master' branch (I use master not main, no real difference just what's easier for me).  
-(Follow the images below. Basically you'll click the 'create pull request' button and add messages/notes and comments)
-<img src="git_guide_images/newchange.PNG">  
-<img src="git_guide_images/pullrequest1.PNG">  
-<img src="git_guide_images/pullrequest2.PNG">  
-<img src="git_guide_images/pullrequest3.PNG">  
-
-**After a pull request was merged to master branch.**
-
-7. Switch back to master branch (git checkout branch_name) (i.e. git checkout master)  
-
-8. Update local repo with current repo on github (git pull repo_url)  
-(i.e. git pull git@github.com:tonywang3571/Final_Project_Repo.git)  
-
-9. Switch back to personal branch and perform a git pull as well. (git checkout -b branch_name) (git pull repo_url)  
-(i.e. git checkout -b tony) (i.e. git pull git@github.com:tonywang3571/Final_Project_Repo.git)  
+**Zillow Data**
+* Portland Housing Prices/Sales
+   * https://www.kaggle.com/datasets/threnjen/portland-housing-prices-sales-jul-2020-jul-2021
+* Description of Data
+   * This file is RAW, uncleaned data scraped with the Zillow API. It comes with nearly 500 columns. Column descriptions are not provided and must be researched or intuitively deduced. Users of this data will be practicing their data massaging, cleaning and feature selection skills, in addition to the later EDA and modeling.
+   * Source of data: Scraped with the Apify Zillow API by Petr Cermak at https://apify.com/petr_cermak/zillow-api-scraper in July 2021
