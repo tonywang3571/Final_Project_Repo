@@ -6,9 +6,9 @@ Zip_Code,Neighborhood_Name
 97201,Arlington Heights
 97219,Arnold Creek
 97219,Ash Creek
-97212,Beaumont Wilshire
+97212,Beaumont-Wilshire
 97227,Boise
-97206,Brentwood Darlington
+97206,Brentwood-Darlington
 97217,Bridgeton
 97221,Bridlemile
 97202,Brooklyn
@@ -19,7 +19,7 @@ Zip_Code,Neighborhood_Name
 97211,Concordia
 97201,Corbet Terwilliger Lair Hill
 97219,Corbet Terwilliger Lair Hill
-97202,Creston Kenilworth
+97202,Creston-Kenilworth
 97219,Crestwood
 97218,Cully
 97205,Downtown
@@ -30,7 +30,7 @@ Zip_Code,Neighborhood_Name
 97227,Eliot
 97219,Far Southwest
 97229,Forest Park
-97206,Foster Powell
+97206,Foster-Powell
 97203,Cathedral Park
 97230,Glenfair
 97204,Goose Hollow
@@ -49,8 +49,8 @@ Zip_Code,Neighborhood_Name
 97213,Hollywood
 97239,Homestead
 97201,Homestead
-97202,Hosford Abernethy
-97214,Hosford Abernethy
+97202,Hosford-Abernethy
+97214,Hosford-Abernethy
 97217,Humboldt
 97212,Irvington
 97217,Kenton
@@ -70,15 +70,15 @@ Zip_Code,Neighborhood_Name
 97219,Marshall Park
 97216,Mill Park
 97213,Montavilla
-97206,Mt Scott Arleta
-97215,Mt Tabor
+97206,Mt. Scott-Arleta
+97215,Mt. Tabor
 97219,Multnomah
 97210,Northwest
 97229,Northwest Heights
 97296,Portland Northwest Industrial
 97210,Portland Northwest Industrial
-97209,Old Town Chinatown
-97204,Old Town Chinatown
+97209,Old Town/Chinatown
+97204,Old Town/Chinatown
 97227,Overlook
 97217,Overlook
 97220,Parkrose Heights
@@ -87,7 +87,7 @@ Zip_Code,Neighborhood_Name
 97217,Piedmont
 97236,Pleasant Valley
 97203,Portsmouth
-97236,Powellhurst Gilbert
+97236,Powellhurst-Gilbert
 97202,Reed
 97214,Richmond
 97206,Richmond
@@ -96,15 +96,15 @@ Zip_Code,Neighborhood_Name
 97230,Russell
 97211,Sabin
 97212,Sabin
-97202,Sellwood Moreland
+97202,Sellwood-Moreland
 97219,South Burlingame
 97206,South Tabor
 97201,Southwest Hills
 97203,St. Johns
-97232,Sullivans Gulch
+97232,Sullivan's Gulch
 97220,Sumner
 97214,Sunnyside
-97221,Sylvan Highlands
+97221,Sylvan-Highlands
 97203,University Park
 97211,Vernon
 97219,West Portland Park
