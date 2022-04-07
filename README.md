@@ -34,5 +34,5 @@ add ALL files changed to be commited and pushed (git add .) <-- this is what I n
 8. Update local repo with current repo on github (git pull repo_url)  
 (i.e. git pull git@github.com:tonywang3571/Final_Project_Repo.git)  
 
-9. Switch back to personal branch to work again (git checkout -b branch_name)  
-(i.e. git checkout -b tony)
+9. Switch back to personal branch and perform a git pull as well. (git checkout -b branch_name) (git pull repo_url)  
+(i.e. git checkout -b tony) (i.e. git pull git@github.com:tonywang3571/Final_Project_Repo.git)  
