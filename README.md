@@ -40,3 +40,8 @@ We have chosen the below datasets based on the:
 * Description of Data
    * This file is RAW, uncleaned data scraped with the Zillow API. It comes with nearly 500 columns. Column descriptions are not provided and must be researched or intuitively deduced. Users of this data will be practicing their data massaging, cleaning and feature selection skills, in addition to the later EDA and modeling.
    * Source of data: Scraped with the Apify Zillow API by Petr Cermak at https://apify.com/petr_cermak/zillow-api-scraper in July 2021
+   
+### Team Organizational Structure
+Our team intends to take a very collaborative approach to this project. Though one person will be the lead for each of the 4 roles each week, all other team members will review and provide input to the work the others complete.
+#### Communication Plan
+Our primary method of communication is via Slack, where we provide status updates and post questions to others in the group. In addition to communicating via Slack, our team has set up the project timeline and requirements in ClickUp, a project management software. The expectation of each of the members of the group is that they will adhere to all deliverable deadlines, and will ask for help from the group to complete any tasks that may delay submission of a deliverable. 
