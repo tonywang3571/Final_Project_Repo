@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    
+    <!-- CSS style -->    
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+</head>
+
+<!-- header with nav-bar -->
+<header class="header">
+    <div class="wrapper">
+        <!-- add navbar at the top, 'expand-lg' adds extra responsiveness -->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <!-- 'a class' is default styling from Bootstrap -->
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/airbnb/">AirBnb Finder</a>
+            <a class="navbar-brand" href="/zillow/">Zillow Data</a>
+            <a class="navbar-brand" href="/tableau/">Tableau Data</a>
+            <a class="navbar-brand" href="/test/">Test Page</a>
+        </nav>    
+    </div>
+</header>
+
+<body>
+    <!-- Using blocks to load different content in the body while keeping nav-bar the same -->
+    <h1>{% block header %}{% endblock %}</h1>
+    
+    {% block body %}{% endblock %}
+
+</body>
+</html>

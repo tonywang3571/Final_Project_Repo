@@ -1,0 +1,14 @@
+<!-- Using index file to build upon base html file -->
+<!-- specifically changing page title and body of webpage content -->
+{% extends "base.html" %}
+{% block title %}Home page{% endblock %}
+{% block header %}Home page{% endblock %}
+
+{% block body %}
+<div class="container-fluid" style="padding:10px">
+    <h2>Purpose</h2>
+    <p>The purpose of this web application is to provide a source to search for different AirBnb locations across the 
+        Portland Oregon area</p>
+</div>
+
+{% endblock %}
