@@ -1,10 +1,10 @@
-<!-- Using zillow file to build upon base html file -->
-<!-- specifically changing page title and body of webpage content -->
 {% extends "base.html" %}
-{% block title %}Portland Zillow Data{% endblock %}
-{% block header %}Portland Zillow Data{% endblock %}
+{% block title %}Test Page{% endblock %}
+{% block header %}Test Page{% endblock %}
 
 {% block body %}
+<h1>This is a test page for code and forming.</h1>
+
 <div class="container-fluid" style="padding:10px">
     <div class="row">
         <!--Add Section for filters -->
@@ -18,12 +18,12 @@
                         <label for="neighborhood">Neighborhoods</label>
                         <select name="neighborhood" id="neighborhood">
                             <option>Choose a Neighborhood</option>
-                            <option value="neighborhood1">neighborhood1</option>
+                            <!-- <option value="neighborhood1">neighborhood1</option>
                             <option value="neighborhood2">neighborhood2</option>
                             <option value="neighborhood3">neighborhood3</option>
                             <option value="neighborhood4">neighborhood4</option>
                             <option value="neighborhood5">neighborhood5</option>
-                            <option value="neighborhood6">neighborhood6</option>
+                            <option value="neighborhood6">neighborhood6</option> -->
                         </select>
                     </li>
                     <li class="list-group-item">
@@ -54,28 +54,48 @@
                     </li>
                 </ul>
             </form>
+            <!-- <script src="http://d3js.org/d3.v3.js"></script>
+            <script>
+            d3.csv("../Resources/Portland_Zip_and_Neighborhood.csv", function(error, data) {
+              var select = d3.select("body")
+                .append("div")
+                .append("select")
+          
+              select
+                .on("change", function(d) {
+                  var value = d3.select(this).property("value");
+                  alert(value);
+                });
+          
+              select.selectAll("option")
+                .data(data)
+                .enter()
+                  .append("option")
+                  .attr("value", function (d) { return d.value; })
+                  .text(function (d) { return d.label; });
+            });
+            </script> -->
         </div>
 
         <!-- Add Section for map -->
         <div class="col-md-9"> 
-            <div id="mapid" style="width: 100%;; height: 100%;">
+            <div id="mapid" style="width: 100%; height: 100%;">
+
                 <!-- Leaflet JavaScript -->
                 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
                 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
                 crossorigin=""></script>
-    
+                
                 <!-- API key -->
                 <script type="text/javascript" src="../static/js/config.js"></script>
                 <!-- Filter data script -->
                 <!-- <script type="text/javascript" src="../static/js/app.js"></script> -->
                 <!-- Our JavaScript -->
                 <script type="text/javascript" src="../static/js/logic.js"></script>
-
             </div>
+
         </div>
     </div>
 </div>
-
-
 {% endblock %}
 

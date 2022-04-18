@@ -1,5 +1,5 @@
 // Add console.log to check to see if our code is working.
-console.log("It is working");
+console.log("Working");
 
 // Order does matter when creating multi-layer maps
 
@@ -42,24 +42,23 @@ let map = L.map('mapid', {
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing our data URL
-let airportData = "https://raw.githubusercontent.com/tonywang3571/Mapping_Earthquakes/master/majorAirports.json";
-// let airportData = "<RAW JSON FILE URL>";
+let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/tonyapp2/Resources/testing50airbnb2.json";
 
 // Grabbing our GeoJSON data.
-d3.json(airportData).then(function(data) {
+d3.json(airbnbData).then(function(data) {
   console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data, {
     onEachFeature: function(feature, layer) {
       console.log(layer);
-      layer.bindPopup("<h4> Location: " + feature.properties.faa + 
-                      "</h4> <hr> <p> Min Price: "+ feature.properties.name + 
-                      "</p> <p> Max Price: " + feature.properties.name +
-                      "</p> <p> Bedrooms: " + feature.properties.name +
-                      "</p> <p> Accommodates: " + feature.properties.name + 
-                      "</p> <p> Bathrooms: " + feature.properties.name +
-                      "</p> <p> Website:" + feature.properties.name +
-                      "</p>");
+      layer.bindPopup("<h4> Location: " + feature.geometry.coordinates[1] + ", " + feature.geometry.coordinates[0] +
+                      "</h4> <hr> <p> Price: "+ feature.properties.price + 
+                      "</p> <p> Bedrooms: " + feature.properties.bedrooms +
+                      "</p> <p> Accommodates: " + feature.properties.accommodates + 
+                      "</p> <p> Bathrooms: " + feature.properties.bathrooms +
+                      "</p> <p> Neighborhood: " + feature.properties.neighbourhood +
+                      "</p> <p> Website: " + "<a href='" + feature.properties.website_url + "'>" + feature.properties.website_url +
+                      "</a> </p>");
     }
   }).addTo(map);
 });
