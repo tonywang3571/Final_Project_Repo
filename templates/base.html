@@ -43,8 +43,9 @@
 
 <body>
     <!-- Using blocks to load different content in the body while keeping nav-bar the same -->
-    <h1>{% block header %}{% endblock %}</h1>
-    
+    <div class="container-fluid">
+        <h1>{% block header %}{% endblock %}</h1>
+    </div> 
     {% block body %}{% endblock %}
 
 </body>
