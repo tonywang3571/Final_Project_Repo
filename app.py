@@ -28,6 +28,9 @@ def tableau():
 def test():
     return render_template('test.html')
 
+@app.route("/scott/")
+def test():
+    return render_template('scott.html')
 
 
 if __name__ == "__main__":

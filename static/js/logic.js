@@ -1,5 +1,5 @@
 // Add console.log to check to see if our code is working.
-console.log("Working");
+console.log("logic.js is working");
 
 // Order does matter when creating multi-layer maps
 
@@ -42,7 +42,7 @@ let map = L.map('mapid', {
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing our data URL
-let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/tonyapp2/Resources/testing50airbnb2.json";
+let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/testing50airbnb2.json";
 
 // Grabbing our GeoJSON data.
 d3.json(airbnbData).then(function(data) {
@@ -51,13 +51,13 @@ d3.json(airbnbData).then(function(data) {
   L.geoJSON(data, {
     onEachFeature: function(feature, layer) {
       console.log(layer);
-      layer.bindPopup("<h4> Location: " + feature.geometry.coordinates[1] + ", " + feature.geometry.coordinates[0] +
-                      "</h4> <hr> <p> Price: "+ feature.properties.price + 
-                      "</p> <p> Bedrooms: " + feature.properties.bedrooms +
-                      "</p> <p> Accommodates: " + feature.properties.accommodates + 
-                      "</p> <p> Bathrooms: " + feature.properties.bathrooms +
-                      "</p> <p> Neighborhood: " + feature.properties.neighbourhood +
-                      "</p> <p> Website: " + "<a href='" + feature.properties.website_url + "'>" + feature.properties.website_url +
+      layer.bindPopup("<h6> Location: " + feature.geometry.coordinates[1] + ", " + feature.geometry.coordinates[0] +
+                      "</h6> <hr> <p style='margin:8px'> Price: "+ feature.properties.price + 
+                      "</p> <p style='margin:8px'> Bedrooms: " + feature.properties.bedrooms +
+                      "</p> <p style='margin:8px'> Accommodates: " + feature.properties.accommodates + 
+                      "</p> <p style='margin:8px'> Bathrooms: " + feature.properties.bathrooms +
+                      "</p> <p style='margin:8px'> Neighborhood: " + feature.properties.neighbourhood +
+                      "</p> <p style='margin:8px'> Website: " + "<a href='" + feature.properties.website_url + "'>" + feature.properties.website_url +
                       "</a> </p>");
     }
   }).addTo(map);
