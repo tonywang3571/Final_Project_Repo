@@ -29,7 +29,7 @@ def test():
     return render_template('test.html')
 
 @app.route("/scott/")
-def test():
+def scott():
     return render_template('scott.html')
 
 
