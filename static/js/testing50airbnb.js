@@ -1,4 +1,4 @@
-var testdata = [
+var data = [
     {
         "price": "89",
         "bedrooms": "2",

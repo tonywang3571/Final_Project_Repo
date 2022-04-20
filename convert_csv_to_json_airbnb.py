@@ -41,14 +41,14 @@ with open(file_to_load, "r") as f:
     data = []
     # for loop to append needed data into a json file
     for row in reader:
-        data.append(        
-            {"price":row[15],
-            "bedrooms":row[13],
-            "accommodates":row[11],
-            "bathrooms":row[12],
+        data.append(    
+            {"coordinates":[float(row[8]), float(row[9])],
+            "price":int(row[15]),
+            "bedrooms":int(row[13]),
+            "accommodates":int(row[11]),
+            "bathrooms":float(row[12]),
             "neighborhood":row[7],
-            "website_url":row[1],
-            "coordinates":[float(row[8]), float(row[9])]
+            "website_url":row[1]
             }
         )
     
