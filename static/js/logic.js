@@ -44,6 +44,9 @@ L.control.layers(baseMaps).addTo(map);
 // Accessing our data URL
 let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/testing50airbnb2.json";
 
+
+// Build markers function?
+function buildmarkers() {
 // Grabbing our GeoJSON data.
 d3.json(airbnbData).then(function(data) {
   console.log(data);
@@ -62,4 +65,65 @@ d3.json(airbnbData).then(function(data) {
     }
   }).addTo(map);
 });
+
+
+
+
+// Map filtering function
+function mapClick() {
+
+  // grab the user input values from the filters
+  let minprice = d3.select("#price").property("value");
+  let maxPrice = d3.select("#max_price").property("value");
+  let beds = d3.select("#bedrooms").property("value");
+  let accom = d3.select("#accommodates").property("value");
+  let baths = d3.select("#bathrooms").property("value");
+  // let sqft = d3.select("#sqft").property("value");
+
+  let filteredMap = airbnbData
+  console.log(d3.json(filteredMap))
+  console.log("map click working 2")
+  // checks to see which (if any) type of value user entered
+  if (minprice) {
+      filteredMap = filteredMap.filter(row => row.feature.properties.price >= minprice);
+  };
+
+  if (maxPrice) {
+      filteredMap = filteredMap.filter(row => row.feature.properties.price <= maxPrice && row.feature.properties.price >= minprice);
+      // console.log(maxPrice)
+      // console.log(minprice)
+  };
+
+  if (beds) {
+      filteredMap = filteredMap.filter(row => row.feature.properties.bedrooms >= beds);
+  };
+
+  if (accom) {
+      filteredMap = filteredMap.filter(row => row.feature.properties.accommodates >= accom);
+  };
+
+  if (baths) {
+      filteredMap = filteredMap.filter(row => row.feature.properties.bathrooms >= baths);
+  };
+
+  // if (sqft) {
+  //   filteredMap = filteredMap.filter(row => row.sqft >= sqft);
+  // };
+
+  // Rebuild the table using the filtered data
+  //@NOTE: if no date was entered, then filteredMap will
+  // just be original tableData.
+  buildmarkers(filteredMap);
+  
+};
+
+// Attach an event to listen for the form button
+d3.selectAll("#filter-btn2").on("click", mapClick);
+
+};
+
+// build markers on webpage load
+buildmarkers(airbnbData);
+
+console.log("logic test 6")
 
