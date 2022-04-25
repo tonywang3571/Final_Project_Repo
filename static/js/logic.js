@@ -74,38 +74,37 @@ function mapClick() {
 
   // grab the user input values from the filters
   let minprice = d3.select("#price").property("value");
-  let maxPrice = d3.select("#max_price").property("value");
+  let maxprice = d3.select("#max_price").property("value");
   let beds = d3.select("#bedrooms").property("value");
   let accom = d3.select("#accommodates").property("value");
   let baths = d3.select("#bathrooms").property("value");
   // let sqft = d3.select("#sqft").property("value");
 
   let filteredMap = airbnbData
+
+  console.log(minprice)
+  console.log(maxprice)
+  console.log(beds)
+  console.log(accom)
+  console.log(baths)
   console.log(d3.json(filteredMap))
-  console.log("map click working 2")
+
   // checks to see which (if any) type of value user entered
   if (minprice) {
       filteredMap = filteredMap.filter(row => row.feature.properties.price >= minprice);
   };
-
-  if (maxPrice) {
-      filteredMap = filteredMap.filter(row => row.feature.properties.price <= maxPrice && row.feature.properties.price >= minprice);
-      // console.log(maxPrice)
-      // console.log(minprice)
+  if (maxprice) {
+      filteredMap = filteredMap.filter(row => row.feature.properties.price <= maxprice && row.feature.properties.price >= minprice);
   };
-
   if (beds) {
       filteredMap = filteredMap.filter(row => row.feature.properties.bedrooms >= beds);
   };
-
   if (accom) {
       filteredMap = filteredMap.filter(row => row.feature.properties.accommodates >= accom);
   };
-
   if (baths) {
       filteredMap = filteredMap.filter(row => row.feature.properties.bathrooms >= baths);
   };
-
   // if (sqft) {
   //   filteredMap = filteredMap.filter(row => row.sqft >= sqft);
   // };
