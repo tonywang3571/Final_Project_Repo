@@ -1,14 +1,16 @@
 <!-- Using index file to build upon base html file -->
 <!-- specifically changing page title and body of webpage content -->
 {% extends "base.html" %}
-{% block title %}Home page{% endblock %}
-{% block header %}Home page{% endblock %}
+{% block title %}Home Page{% endblock %}
+{% block header %}Home Page{% endblock %}
 
 {% block body %}
-<div class="container-fluid" style="padding:10px">
-    <h2>Purpose</h2>
-    <p>The purpose of this web application is to provide a source to search for different AirBnb locations across the 
-        Portland Oregon area</p>
+
+<div class = "jumbotron text-right", style="background-image: url('https://www.sagaftra.org/files/styles/sa_hero_desktop_2x/public/locals_2560x960_Portland.jpg?itok=Eus4HpgI&timestamp=1523991754'); background-repeat: no-repeat; background-size: cover; padding-top: 15%; padding-bottom: 15%;">
+    <h1 style="font-size: 70px;">Discovering Real Estate Investment <br> Opportunities in Portland, Oregon</h1>
+
+    <p style="font-size: 30px;"><br><br>Evaluating data from AirBNB and Zillow datasets to analyze potential<br> opportunities for real estate investment in the Portland, Oregon area.
+    </p>
 </div>
 
 {% endblock %}
