@@ -1,5 +1,5 @@
 // load data from js file
-const tableData = data3;
+const tableData = airbnb_data;
 console.log("app.js is working");
 
 // get table references
@@ -55,7 +55,7 @@ function buildTable(data) {
 
     // grab the user input values from the filters
     let minprice = d3.select("#price").property("value");
-    let maxPrice = d3.select("#max_price").property("value");
+    let maxprice = d3.select("#max_price").property("value");
     let beds = d3.select("#bedrooms").property("value");
     let accom = d3.select("#accommodates").property("value");
     let baths = d3.select("#bathrooms").property("value");
@@ -68,9 +68,9 @@ function buildTable(data) {
         filteredData = filteredData.filter(row => row.price >= minprice);
     };
 
-    if (maxPrice) {
-        filteredData = filteredData.filter(row => row.price <= maxPrice && row.price >= minprice);
-        // console.log(maxPrice)
+    if (maxprice) {
+        filteredData = filteredData.filter(row => row.price <= maxprice && row.price >= minprice);
+        // console.log(maxprice)
         // console.log(minprice)
     };
 
@@ -111,7 +111,7 @@ buildTable(tableData);
 //   var selector = d3.select("#neighborhood");
 
 //   // Use the list of sample names to populate the select options
-//   d3.json(data3).then((data) => {
+//   d3.json(airbnb_data).then((data) => {
 //     console.log(data);
 //     var sampleNames = data.feature.properties.neighbourhood;
 //     console.log(sampleNames)
