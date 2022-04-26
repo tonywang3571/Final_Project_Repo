@@ -42,8 +42,8 @@ let map = L.map('mapid', {
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing our data URL
-let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/testing50airbnb2.json";
-
+let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_geojson_data.json";
+console.log(airbnbData);
 
 // Build markers function?
 function buildmarkers() {
@@ -53,8 +53,8 @@ d3.json(airbnbData).then(function(data) {
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data, {
     onEachFeature: function(feature, layer) {
-      console.log(layer);
-      layer.bindPopup("<h6> Location: " + feature.geometry.coordinates[1] + ", " + feature.geometry.coordinates[0] +
+      // console.log(layer);
+      layer.bindPopup("<h6> Location: " + feature.properties.address + 
                       "</h6> <hr> <p style='margin:8px'> Price: "+ feature.properties.price + 
                       "</p> <p style='margin:8px'> Bedrooms: " + feature.properties.bedrooms +
                       "</p> <p style='margin:8px'> Accommodates: " + feature.properties.accommodates + 
@@ -65,64 +65,85 @@ d3.json(airbnbData).then(function(data) {
     }
   }).addTo(map);
 });
-
-
+};
 
 
 // Map filtering function
 function mapClick() {
 
   // grab the user input values from the filters
-  let minprice = d3.select("#price").property("value");
-  let maxprice = d3.select("#max_price").property("value");
-  let beds = d3.select("#bedrooms").property("value");
-  let accom = d3.select("#accommodates").property("value");
-  let baths = d3.select("#bathrooms").property("value");
+  // let minprice_map = d3.select("#price").property("value");
+  // let maxprice_map = d3.select("#max_price").property("value");
+  // let beds_map = d3.select("#bedrooms").property("value");
+  // let accom_map = d3.select("#accommodates").property("value");
+  let baths_map = d3.select("#bathrooms").property("value");
   // let sqft = d3.select("#sqft").property("value");
 
-  let filteredMap = airbnbData
+//   let filteredMap = airbnbData
 
-  console.log(minprice)
-  console.log(maxprice)
-  console.log(beds)
-  console.log(accom)
-  console.log(baths)
-  console.log(d3.json(filteredMap))
+//   console.log(minprice_map)
+//   console.log(maxprice_map)
+//   console.log(beds_map)
+//   console.log(accom_map)
+  console.log(baths_map)
+//   console.log(d3.json(filteredMap))
 
-  // checks to see which (if any) type of value user entered
-  if (minprice) {
-      filteredMap = filteredMap.filter(row => row.feature.properties.price >= minprice);
-  };
-  if (maxprice) {
-      filteredMap = filteredMap.filter(row => row.feature.properties.price <= maxprice && row.feature.properties.price >= minprice);
-  };
-  if (beds) {
-      filteredMap = filteredMap.filter(row => row.feature.properties.bedrooms >= beds);
-  };
-  if (accom) {
-      filteredMap = filteredMap.filter(row => row.feature.properties.accommodates >= accom);
-  };
-  if (baths) {
-      filteredMap = filteredMap.filter(row => row.feature.properties.bathrooms >= baths);
-  };
-  // if (sqft) {
-  //   filteredMap = filteredMap.filter(row => row.sqft >= sqft);
-  // };
+  let airbnbData = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_geojson_data.json";
+
+  console.log(airbnbData)
+  d3.json(airbnbData, function(data) {
+    console.log(data);
+    // Creating a GeoJSON layer with the retrieved data.
+    L.geoJSON(data, {
+      onEachFeature: function(feature, layer) {
+        // console.log(layer);
+        layer.bindPopup("<h6> Location: " + feature.properties.address + 
+                        "</h6> <hr> <p style='margin:8px'> Price: "+ feature.properties.price + 
+                        "</p> <p style='margin:8px'> Bedrooms: " + feature.properties.bedrooms +
+                        "</p> <p style='margin:8px'> Accommodates: " + feature.properties.accommodates + 
+                        "</p> <p style='margin:8px'> Bathrooms: " + feature.properties.bathrooms +
+                        "</p> <p style='margin:8px'> Neighborhood: " + feature.properties.neighbourhood +
+                        "</p> <p style='margin:8px'> Website: " + "<a href='" + feature.properties.website_url + "'>" + feature.properties.website_url +
+                        "</a> </p>");
+      }
+    }).addTo(map);
+  });
+  // buildmarkers(airbnbData);
+
+//   // checks to see which (if any) type of value user entered
+//   // if (minprice) {
+//   //     filteredMap = filteredMap.filter(row => row.feature.properties.price >= minprice);
+//   // };
+//   // if (maxprice) {
+//   //     filteredMap = filteredMap.filter(row => row.feature.properties.price <= maxprice && row.feature.properties.price >= minprice);
+//   // };
+//   // if (beds) {
+//   //     filteredMap = filteredMap.filter(row => row.feature.properties.bedrooms >= beds);
+//   // };
+//   // if (accom) {
+//   //     filteredMap = filteredMap.filter(row => row.feature.properties.accommodates >= accom);
+//   // };
+//   // if (baths) {
+//   //     filteredMap = filteredMap.filter(row => row.feature.properties.bathrooms >= baths);
+//   // };
+//   // if (sqft) {
+//   //   filteredMap = filteredMap.filter(row => row.sqft >= sqft);
+//   // };
 
   // Rebuild the table using the filtered data
   //@NOTE: if no date was entered, then filteredMap will
   // just be original tableData.
-  buildmarkers(filteredMap);
-  
+  // buildmarkers();
+  // buildmarkers(filteredMap);
+  console.log(data);
 };
 
 // Attach an event to listen for the form button
 d3.selectAll("#filter-btn2").on("click", mapClick);
 
-};
 
 // build markers on webpage load
-buildmarkers(airbnbData);
+buildmarkers();
 
-console.log("logic test 6")
+console.log("logic test 7")
 
