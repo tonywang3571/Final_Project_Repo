@@ -28,10 +28,21 @@ def tableau():
 def test():
     return render_template('test.html')
 
-@app.route("/scott/")
-def scott():
-    return render_template('scott.html')
+@app.route("/laura/")
+def laura():
+    return render_template('laura.html')
 
+@app.route("/team/")
+def team():
+    return render_template('team.html')
+
+@app.route("/description_of_calcs/")
+def description_of_calcs():
+    return render_template('description_of_calcs.html')
+
+@app.route("/neighborhoods/")
+def neighborhoods():
+    return render_template('neighborhoods.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
