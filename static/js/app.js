@@ -1,6 +1,6 @@
 // load data from js file
 const tableData = airbnb_data;
-console.log("app.js is working5");
+console.log("app.js is working");
 
 // get table references
 var tbody = d3.select("tbody");
@@ -110,11 +110,9 @@ function ddmenu() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#neighborhood");
 
-  
-  let neighborhood_list = ""
-
+  let airbnb_data_neighborhood = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_data_neighborhood.json"
   // Use the list of sample names to populate the select options
-  d3.json("airbnb_data_neighborhood.json").then((data) => {
+  d3.json(airbnb_data_neighborhood).then((data) => {
     var sampleHood = data.neighborhood;
 
     sampleHood.forEach((sample) => {
@@ -131,10 +129,12 @@ ddmenu();
 
 function optionChanged(neighborhoodName) {
   // Fetch new data each time a new sample is selected
-  console.log(neighborhoodName);
-  // buildCharts(newSample);
+  // let hoodName = d3.select("#neighborhood").property("value");
+  // if (hoodName) {
+  //   filteredData = filteredData.filter(row => row.neighborhood == hoodName);
+console.log(neighborhoodName)
+};
   
-}
 
   
   // d3.json(airbnbData).then(function(data) {
@@ -160,4 +160,4 @@ function optionChanged(neighborhoodName) {
   
 
 
-console.log("app.js test 3")
+console.log("app.js test 6")
