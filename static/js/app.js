@@ -1,6 +1,6 @@
 // load data from js file
 const tableData = airbnb_data;
-console.log("app.js is working");
+console.log("app.js is working5");
 
 // get table references
 var tbody = d3.select("tbody");
@@ -23,23 +23,23 @@ function buildTable(data) {
     Object.values(dataRow).forEach((val) => {
       let cell = row.append("td");
       cell.text(val);
+      // console.log(Object.values(dataRow)[6]);
     });
 
-
+    // let count = 0
     // Object.values(dataRow).forEach((val) => {
     //   let cell = row.append("td");
-    //   // console.log(val);
-    //   console.log(Object.values(dataRow)[6]);
-
-    //   // NEED TO ASK RJ ABOUT THIS
-    //   if (cell.text(val.includes('https:'))) {
-    //     cell.text("This is a website5")
+    //   count += 1
+    //   console.log(count);
+    //   if (count % 7 == 0) {
+    //     cell.text(val);
+    //     document.getElementsByTagName("td")[6].innerHTML = '<a href="' + val + '">' + val + '</a>';
     //   }
     //   else {
     //     cell.text(val);
-    //   };
-    // });
+    //   }
 
+    // });
 
 
 
@@ -106,29 +106,58 @@ function buildTable(data) {
 buildTable(tableData);
 
 
-// function init() {
-//   // Grab a reference to the dropdown select element
-//   var selector = d3.select("#neighborhood");
+function ddmenu() {
+  // Grab a reference to the dropdown select element
+  var selector = d3.select("#neighborhood");
 
-//   // Use the list of sample names to populate the select options
-//   d3.json(airbnb_data).then((data) => {
-//     console.log(data);
-//     var sampleNames = data.feature.properties.neighbourhood;
-//     console.log(sampleNames)
+  
+  let neighborhood_list = ""
 
-//     sampleNames.forEach((name) => {
-//       selector
-//         .append("option")
-//         .text(name)
-//         .property("value", name);
-//     });
-//   });
-// }
+  // Use the list of sample names to populate the select options
+  d3.json("airbnb_data_neighborhood.json").then((data) => {
+    var sampleHood = data.neighborhood;
 
-// // Initialize the dashboard
-// init();
+    sampleHood.forEach((sample) => {
+      selector
+        .append("option")
+        .text(sample)
+        .property("value", sample);
+    });
+  });
+}
+
+// Initialize the dropdown menu
+ddmenu();
+
+function optionChanged(neighborhoodName) {
+  // Fetch new data each time a new sample is selected
+  console.log(neighborhoodName);
+  // buildCharts(newSample);
+  
+}
+
+  
+  // d3.json(airbnbData).then(function(data) {
+  //   // console.log(data);
+  //   // Creating a GeoJSON layer with the retrieved data.
+  //   L.geoJSON(data, {
+  //     onEachFeature: function(feature, layer) {
+  //       // console.log(layer);
+  //       layer.bindPopup("<h6> Location: " + feature.properties.address + 
+  //                       "</h6> <hr> <p style='margin:8px'> Price: "+ feature.properties.price + 
+  //                       "</p> <p style='margin:8px'> Bedrooms: " + feature.properties.bedrooms +
+  //                       "</p> <p style='margin:8px'> Accommodates: " + feature.properties.accommodates + 
+  //                       "</p> <p style='margin:8px'> Bathrooms: " + feature.properties.bathrooms +
+  //                       "</p> <p style='margin:8px'> Neighborhood: " + feature.properties.neighbourhood +
+  //                       "</p> <p style='margin:8px'> Website: " + "<a href='" + feature.properties.website_url + "'>" + feature.properties.website_url +
+  //                       "</a> </p>");
+  //     }
+  //   }).addTo(map);
+  // });
 
 
 
+  
 
-console.log("Test number 1")
+
+console.log("app.js test 3")
