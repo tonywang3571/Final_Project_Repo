@@ -59,6 +59,7 @@ function buildTable(data) {
     let beds = d3.select("#bedrooms").property("value");
     let accom = d3.select("#accommodates").property("value");
     let baths = d3.select("#bathrooms").property("value");
+    let hoodname = d3.select("#neighborhood").property("value");
     // let sqft = d3.select("#sqft").property("value");
 
     let filteredData = tableData;
@@ -86,6 +87,9 @@ function buildTable(data) {
         filteredData = filteredData.filter(row => row.bathrooms >= baths);
     };
 
+    if (hoodname) {
+      filteredData = filteredData.filter(row => row.neighborhood == hoodname);
+    };
   //   if (sqft) {
   //     filteredData = filteredData.filter(row => row.sqft >= sqft);
   // };
@@ -94,7 +98,6 @@ function buildTable(data) {
     //@NOTE: if no date was entered, then filteredData will
     // just be original tableData.
     buildTable(filteredData);
-    
   };
 
   // Attach an event to listen for the form button
@@ -111,7 +114,7 @@ function ddmenu() {
   var selector = d3.select("#neighborhood");
 
   let airbnb_data_neighborhood = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_data_neighborhood.json"
-  // Use the list of sample names to populate the select options
+  // Use the list of neighborhood names to populate the select options
   d3.json(airbnb_data_neighborhood).then((data) => {
     var sampleHood = data.neighborhood;
 
@@ -127,16 +130,7 @@ function ddmenu() {
 // Initialize the dropdown menu
 ddmenu();
 
-function optionChanged(neighborhoodName) {
-  // Fetch new data each time a new sample is selected
-  // let hoodName = d3.select("#neighborhood").property("value");
-  // if (hoodName) {
-  //   filteredData = filteredData.filter(row => row.neighborhood == hoodName);
-console.log(neighborhoodName)
-};
-  
 
-  
   // d3.json(airbnbData).then(function(data) {
   //   // console.log(data);
   //   // Creating a GeoJSON layer with the retrieved data.
@@ -160,4 +154,4 @@ console.log(neighborhoodName)
   
 
 
-console.log("app.js test 6")
+console.log("app.js test 1")
