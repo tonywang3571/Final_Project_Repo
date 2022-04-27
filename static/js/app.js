@@ -87,9 +87,10 @@ function buildTable(data) {
         filteredData = filteredData.filter(row => row.bathrooms >= baths);
     };
 
-    if (hoodname) {
+    if (hoodname != "Select Neighborhood") {
       filteredData = filteredData.filter(row => row.neighborhood == hoodname);
     };
+
   //   if (sqft) {
   //     filteredData = filteredData.filter(row => row.sqft >= sqft);
   // };
@@ -129,29 +130,5 @@ function ddmenu() {
 
 // Initialize the dropdown menu
 ddmenu();
-
-
-  // d3.json(airbnbData).then(function(data) {
-  //   // console.log(data);
-  //   // Creating a GeoJSON layer with the retrieved data.
-  //   L.geoJSON(data, {
-  //     onEachFeature: function(feature, layer) {
-  //       // console.log(layer);
-  //       layer.bindPopup("<h6> Location: " + feature.properties.address + 
-  //                       "</h6> <hr> <p style='margin:8px'> Price: "+ feature.properties.price + 
-  //                       "</p> <p style='margin:8px'> Bedrooms: " + feature.properties.bedrooms +
-  //                       "</p> <p style='margin:8px'> Accommodates: " + feature.properties.accommodates + 
-  //                       "</p> <p style='margin:8px'> Bathrooms: " + feature.properties.bathrooms +
-  //                       "</p> <p style='margin:8px'> Neighborhood: " + feature.properties.neighbourhood +
-  //                       "</p> <p style='margin:8px'> Website: " + "<a href='" + feature.properties.website_url + "'>" + feature.properties.website_url +
-  //                       "</a> </p>");
-  //     }
-  //   }).addTo(map);
-  // });
-
-
-
-  
-
 
 console.log("app.js test 1")
