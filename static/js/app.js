@@ -61,39 +61,19 @@ function buildTable(data) {
     let baths = d3.select("#bathrooms").property("value");
     let hoodname = d3.select("#neighborhood").property("value");
     // let sqft = d3.select("#sqft").property("value");
+    // let ppsqft = d3.select("#ppsqft").property("value");
 
     let filteredData = tableData;
 
     // checks to see which (if any) type of value user entered
-    if (minprice) {
-        filteredData = filteredData.filter(row => row.price >= minprice);
-    };
-
-    if (maxprice) {
-        filteredData = filteredData.filter(row => row.price <= maxprice && row.price >= minprice);
-        // console.log(maxprice)
-        // console.log(minprice)
-    };
-
-    if (beds) {
-        filteredData = filteredData.filter(row => row.bedrooms >= beds);
-    };
-
-    if (accom) {
-        filteredData = filteredData.filter(row => row.accommodates >= accom);
-    };
-
-    if (baths) {
-        filteredData = filteredData.filter(row => row.bathrooms >= baths);
-    };
-
-    if (hoodname != "Select Neighborhood") {
-      filteredData = filteredData.filter(row => row.neighborhood == hoodname);
-    };
-
-  //   if (sqft) {
-  //     filteredData = filteredData.filter(row => row.sqft >= sqft);
-  // };
+    if (minprice) {filteredData = filteredData.filter(row => row.price >= minprice)};
+    if (maxprice) {filteredData = filteredData.filter(row => row.price <= maxprice && row.price >= minprice)};
+    if (beds) {filteredData = filteredData.filter(row => row.bedrooms >= beds)};
+    if (accom) {filteredData = filteredData.filter(row => row.accommodates >= accom)};
+    if (baths) {filteredData = filteredData.filter(row => row.bathrooms >= baths)};
+    if (hoodname != "Select Neighborhood") {filteredData = filteredData.filter(row => row.neighborhood == hoodname)};
+    // if (sqft) {filteredData = filteredData.filter(row => row.sqft >= sqft)};
+    // if (ppsqft) {filteredData = filteredData.filter(row => row.ppsqft >= ppsqft)};
 
     // Rebuild the table using the filtered data
     //@NOTE: if no date was entered, then filteredData will
