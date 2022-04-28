@@ -20,10 +20,6 @@ def zillow():
 def tableau():
     return render_template('tableau.html')
 
-# @app.route("/data/")
-# def data():
-#     return render_template('index.html')
-
 @app.route("/test/")
 def test():
     return render_template('test.html')
@@ -39,10 +35,6 @@ def team():
 @app.route("/description_of_calcs/")
 def description_of_calcs():
     return render_template('description_of_calcs.html')
-
-@app.route("/neighborhoods/")
-def neighborhoods():
-    return render_template('neighborhoods.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

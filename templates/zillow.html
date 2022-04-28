@@ -1,8 +1,8 @@
 <!-- Using zillow file to build upon base html file -->
 <!-- specifically changing page title and body of webpage content -->
 {% extends "base.html" %}
-{% block title %}Portland Zillow Data{% endblock %}
-{% block header %}Portland Zillow Data{% endblock %}
+{% block title %}Portland Zillow Houses{% endblock %}
+{% block header %}Portland Zillow Houses{% endblock %}
 
 {% block body %}
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
@@ -48,7 +48,7 @@
                     </li>
                     <li class="list-group-item">
                         <label for="ppsqft">Price per Square Foot</label>
-                        <input type="text" placeholder=Price per Square Foot" id="price_per_square_foot" />
+                        <input type="text" placeholder="Price per Square Foot" id="price_per_square_foot" />
                     </li>
                     <!-- button to apply filters -->
                     <li class="list-group">
