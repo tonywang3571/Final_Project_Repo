@@ -1,8 +1,8 @@
 <!-- Using index file to build upon base html file -->
 <!-- specifically changing page title and body of webpage content -->
 {% extends "base.html" %}
-{% block title %}Home Page{% endblock %}
-{% block header %}Home Page{% endblock %}
+{% block title %}A City of Neighborhoods{% endblock %}
+{% block header %}A City of Neighborhoods{% endblock %}
 
 {% block body %}
 
@@ -12,6 +12,23 @@
     <h3><br><br>Evaluating data from AirBNB and Zillow datasets to <br> analyze potential opportunities for real estate <br> investment in the Portland, Oregon area.
     </h3>
 
+</div>
+
+<div class="container-fluid" style="padding:10px">
+    <div class="row"><br><br>
+        <!-- <div class="col-sm-12">
+            <a href="https://portlandneighborhood.com/portland-neighborhoods" style="font-size: 30px">Interactive Neighborhood Map with Details for the Neighborhoods</a> 
+        </div> -->
+        <div class="col-sm-6">
+            <!-- style="padding: 60px; font-size: 35px;" -->
+            <p style="font-size: 28px;">In its classic quirky fashion, Portland's six main geographical sections (North, Northeast, Northwest, South, Southeast and Southwest) are referred to by residents as the city's "quadrants." The city is divided into north and south by Burnside Street and into east and west by the Willamette River.  Portland actually has more than 90 formally recognized neighborhoods with distinct boundaries.</p>
+            <a href="https://portlandneighborhood.com/portland-neighborhoods" style="font-size: 23px">Interactive Neighborhood Map with Neighborhood Details</a> 
+        </div>
+        <div class="col-sm-6">
+            <img src="../static/images/neighborhood_summary_pic.PNG" style='height: 85%; width: 85%; object-fit: contain; align-content: right;'/>
+            <p style="padding: 10px; font-size: 14px; text-align: right; margin-right: 138px;" href="https://www.travelportland.com/neighborhoods/">Source: www.travelportland.com</p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
