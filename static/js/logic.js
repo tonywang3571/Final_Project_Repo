@@ -49,7 +49,7 @@ console.log(airbnbData);
 // function buildmarkers() {
 // // Grabbing our GeoJSON data.
 // d3.json(airbnbData).then(function(data) {
-//   console.log(data);
+// //   console.log(data);
 //   // Creating a GeoJSON layer with the retrieved data.
 //   L.geoJSON(data, {
 //     onEachFeature: function(feature, layer) {
@@ -71,6 +71,8 @@ console.log(airbnbData);
 // Map filtering function
 function mapClick() {
 
+
+
   // grab the user input values from the filters
   // let minprice_map = d3.select("#price").property("value");
   // let maxprice_map = d3.select("#max_price").property("value");
@@ -88,6 +90,7 @@ function mapClick() {
   // console.log(baths_map)
   // console.log(filteredMap)
 
+
   d3.json(filteredMap).then(function(data) {
     // Creating a GeoJSON layer with the retrieved data.
     L.geoJSON(data, {filter: mapfilterfunction}, {
@@ -104,11 +107,12 @@ function mapClick() {
       }
     }).addTo(map);
     function mapfilterfunction(feature) {
-      // map.removeLayer()
+      // map.removeLayer(feature);
 
 
 
       if (feature.properties.bathrooms >= baths_map) return true
+
  
     };
 
@@ -149,5 +153,5 @@ d3.selectAll("#filter-btn2").on("click", mapClick);
 // build markers on webpage load
 // buildmarkers();
 
-console.log("logic test 3")
+console.log("logic test 5")
 
