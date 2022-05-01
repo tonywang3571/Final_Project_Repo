@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Team Members{% endblock %}
+{% block header %}Team Members{% endblock %}
+
+{% block body %}
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container-fluid" style="padding:10px">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="single-defination">
+                    <h4 class="mb-20">Scott Heinemeier</h4>
+                    <img src="../static/images/scott.jpg" style='height: 60%; width: 60%; object-fit: contain'/><br><br>
+                    <ul class="unordered-list">
+                        <li style="font-size: 22px;">Tableau</li>
+                        <li style="font-size: 22px;">Project Milestone and Presentation Manager</li>
+                    </ul><br>
+                    <a href="https://www.linkedin.com/in/scottheinemeier/" class="fa fa-linkedin" style="font-size: 35px";></a> 
+                    <a href="https://github.com/scoots31" class="fa fa-github" style="font-size: 35px";></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-defination">
+                    <h4 class="mb-20">Laura Stock</h4>
+                    <img src="../static/images/laura.jfif" style='height: 60%; width: 60%; object-fit: contain'/><br><br>
+                    <ul class="unordered-list">
+                        <li style="font-size: 22px;">Data ETL and Analysis</li>
+                        <li style="font-size: 22px;">Google API Reverse Geocoding</li>
+                    </ul><br>
+                    <a href="https://www.linkedin.com/in/laura-stock-5544a6208/" class="fa fa-linkedin" style="font-size: 35px";></a> 
+                    <a href="https://github.com/lauras521" class="fa fa-github" style="font-size: 35px";></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-defination">
+                    <h4 class="mb-20">Katie Troll</h4>
+                    <img src="../static/images/katie.jfif" style='height: 60%; width: 60%; object-fit: contain'/><br><br>
+                    <ul class="unordered-list">
+                        <li style="font-size: 22px;">Data ETL and Analysis</li>
+                        <li style="font-size: 22px;">Machine Learning Modeling and Testing</li>
+                    </ul><br>
+                    <a href="https://www.linkedin.com/in/katiemtroll/" class="fa fa-linkedin" style="font-size: 35px";></a> 
+                    <a href="https://github.com/katiemtroll" class="fa fa-github" style="font-size: 35px";></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-defination">
+                    <h4 class="mb-20">Tony Wang</h4>
+                    <img src="../static/images/tony.jfif" style='height: 60%; width: 60%; object-fit: contain'/><br><br>
+                    <ul class="unordered-list">
+                        <li style="font-size: 22px;">Flask & Heroku App Deployment</li>
+                        <li style="font-size: 22px;">HTML/CSS Admin</li>
+                        <li style="font-size: 22px;">Git Hub Repository Management</li>
+                    </ul><br>
+                    <a href="https://www.linkedin.com/in/tony-wang-133b7b96/" class="fa fa-linkedin" style="font-size: 35px";></a> 
+                    <a href="https://github.com/tonywang3571" class="fa fa-github" style="font-size: 35px";></a>
+                </div>
+            </div>
+        </div> <br> <br>
+    <h2 style="font-size: 35px;">Citations and Credits:</h2> <br>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="font-size: 26px;">The team would like to thank the teachers, tutors, and support team who helped us succeed in this course:
+                <ul class="unordered-list">
+                    <li style="font-size: 22px;">RJ Sak</li>
+                    <li style="font-size: 22px;">Kelly Hull</li>
+                    <li style="font-size: 22px;">Lauren Stein</li>
+                    <li style="font-size: 22px;">Mandi Ginn - Franz</li>
+                    <li style="font-size: 22px;">Dustin </li>
+                    <li style="font-size: 22px;">Tutor1 </li>
+                </ul>
+            </p>
+        </div>
+        <div class="col-md-12">
+            <p style="font-size: 26px;">Data Sources:
+                <ul class="unordered-list">
+                    <li style="font-size: 22px;">This dataset provides assumed active listings as of December 20, 2021 for Portland, Oregon.
+                        <ul>
+                            <li><a href="http://insideairbnb.com/get-the-data/">Airbnb Data</a></li>
+                        </ul>
+                    </li>
+                    <li style="font-size: 22px;">This dataset provides Zillow house listings from July 2020 to July 2021.
+                        <ul>
+                            <li><a href="https://www.kaggle.com/datasets/threnjen/portland-housing-prices-sales-jul-2020-jul-2021">Zillow Data</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
