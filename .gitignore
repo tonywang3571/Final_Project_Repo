@@ -131,3 +131,6 @@ dmypy.json
 # Config files with API key
 config.js
 config.py
+
+# Heroku App ingores
+/node_modules
