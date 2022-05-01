@@ -24,9 +24,9 @@ def tableau():
 def team():
     return render_template('team.html')
 
-@app.route("/description_of_calcs/")
-def description_of_calcs():
-    return render_template('description_of_calcs.html')
+@app.route("/glossary/")
+def glossary():
+    return render_template('glossary.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
