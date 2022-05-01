@@ -5,49 +5,36 @@ console.log("app.js is working");
 // get table references
 var tbody = d3.select("tbody");
 
-
-
 // build data table
 function buildTable(data) {
   // clear out any existing data
   tbody.html("");
   let number = 0
+  let count = 0
+
   // loop through each object in the data and append a row and cells for each value in the row
   data.forEach((dataRow) => {
     // append a row to the table body
     let row = tbody.append("tr");
     number += 1
-    // console.log(number);
 
     // loop through each field in the dataRow and add each value as a table cell (td)
     Object.values(dataRow).forEach((val) => {
       let cell = row.append("td");
-      cell.text(val);
-      // console.log(Object.values(dataRow)[6]);
+      count += 1
+      // If value is in the website column, based on position, make clickable.
+      if (count % 7 == 0) {
+        cell.text(val);
+        document.getElementsByTagName("td")[(count - 1)].innerHTML = '<a href="' + val + '">' + val + '</a>';
+      }
+      else {
+        cell.text(val);
+      }
     });
-
-    // let count = 0
-    // Object.values(dataRow).forEach((val) => {
-    //   let cell = row.append("td");
-    //   count += 1
-    //   console.log(count);
-    //   if (count % 7 == 0) {
-    //     cell.text(val);
-    //     document.getElementsByTagName("td")[6].innerHTML = '<a href="' + val + '">' + val + '</a>';
-    //   }
-    //   else {
-    //     cell.text(val);
-    //   }
-
-    // });
-
-
-
 
   });
 
   // Count number of rows and display the results.
-  // console.log(number);
   document.getElementById("results").innerHTML = number;
 
   // update data table with user input values
@@ -60,8 +47,6 @@ function buildTable(data) {
     let accom = d3.select("#accommodates").property("value");
     let baths = d3.select("#bathrooms").property("value");
     let hoodname = d3.select("#neighborhood").property("value");
-    // let sqft = d3.select("#sqft").property("value");
-    // let ppsqft = d3.select("#ppsqft").property("value");
 
     let filteredData = tableData;
 
@@ -72,8 +57,7 @@ function buildTable(data) {
     if (accom) {filteredData = filteredData.filter(row => row.accommodates >= accom)};
     if (baths) {filteredData = filteredData.filter(row => row.bathrooms >= baths)};
     if (hoodname != "Select Neighborhood") {filteredData = filteredData.filter(row => row.neighborhood == hoodname)};
-    // if (sqft) {filteredData = filteredData.filter(row => row.sqft >= sqft)};
-    // if (ppsqft) {filteredData = filteredData.filter(row => row.ppsqft >= ppsqft)};
+
 
     // Rebuild the table using the filtered data
     //@NOTE: if no date was entered, then filteredData will
@@ -86,17 +70,13 @@ function buildTable(data) {
   
 };
 
-// Build the table when the page loads
-buildTable(tableData);
-
-
 function ddmenu() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#neighborhood");
 
-  let airbnb_data_neighborhood = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_data_neighborhood.json"
+  let neighborhood_name_list = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/neighborhood_name_list.json"
   // Use the list of neighborhood names to populate the select options
-  d3.json(airbnb_data_neighborhood).then((data) => {
+  d3.json(neighborhood_name_list).then((data) => {
     var sampleHood = data.neighborhood;
 
     sampleHood.forEach((sample) => {
@@ -108,7 +88,6 @@ function ddmenu() {
   });
 }
 
-// Initialize the dropdown menu
+// Initialize table and dropdown menu when page loads
+buildTable(tableData);
 ddmenu();
-
-console.log("app.js test 1")
