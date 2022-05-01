@@ -20,14 +20,6 @@ def zillow():
 def tableau():
     return render_template('tableau.html')
 
-@app.route("/test/")
-def test():
-    return render_template('test.html')
-
-@app.route("/laura/")
-def laura():
-    return render_template('laura.html')
-
 @app.route("/team/")
 def team():
     return render_template('team.html')

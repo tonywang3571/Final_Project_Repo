@@ -74,9 +74,9 @@ function ddmenu() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#neighborhood");
 
-  let neighborhood_name_list = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/neighborhood_name_list.json"
+  let airbnb_data_neighborhood = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_data_neighborhood.json"
   // Use the list of neighborhood names to populate the select options
-  d3.json(neighborhood_name_list).then((data) => {
+  d3.json(airbnb_data_neighborhood).then((data) => {
     var sampleHood = data.neighborhood;
 
     sampleHood.forEach((sample) => {

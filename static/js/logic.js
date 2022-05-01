@@ -87,7 +87,7 @@ function buildmarkers(marker_pops) {
             "</p> <p style='margin:8px'> Bedrooms: " + data.bedrooms +
             "</p> <p style='margin:8px'> Accommodates: " + data.accommodates + 
             "</p> <p style='margin:8px'> Bathrooms: " + data.bathrooms +
-            "</p> <p style='margin:8px'> Neighborhood: " + data.neighbourhood +
+            "</p> <p style='margin:8px'> Neighborhood: " + data.neighborhood +
             "</p> <p style='margin:8px'> Website: " + "<a href='" + data.website_url + "'>" + data.website_url +
             "</a> </p>")
     .addTo(map);

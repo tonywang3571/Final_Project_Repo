@@ -85,9 +85,10 @@ function buildmarkers(marker_pops) {
   .bindPopup("<h6> Location: " + data.address + 
             "</h6> <hr> <p style='margin:8px'> Price: "+ data.price + 
             "</p> <p style='margin:8px'> Bedrooms: " + data.bedrooms +
-            "</p> <p style='margin:8px'> Accommodates: " + data.accommodates + 
-            "</p> <p style='margin:8px'> Bathrooms: " + data.bathrooms +
-            "</p> <p style='margin:8px'> Neighborhood: " + data.neighbourhood +
+            "</p> <p style='margin:8px'> Bathrooms: " + data.bathrooms + 
+            "</p> <p style='margin:8px'> Square Foot: " + data.square_foot +
+            "</p> <p style='margin:8px'> Price per Square Foot: " + data.price_per_square_foot +
+            "</p> <p style='margin:8px'> Neighborhood: " + data.neighborhood +
             "</p> <p style='margin:8px'> Website: " + "<a href='" + data.website_url + "'>" + data.website_url +
             "</a> </p>")
     .addTo(map);
@@ -103,7 +104,6 @@ function mapClick() {
   let minprice_map = d3.select("#price").property("value");
   let maxprice_map = d3.select("#max_price").property("value");
   let beds_map = d3.select("#bedrooms").property("value");
-  let accom_map = d3.select("#accommodates").property("value");
   let baths_map = d3.select("#bathrooms").property("value");
   let hoodname_map = d3.select("#neighborhood").property("value");
   let sqft = d3.select("#square_foot").property("value");
@@ -120,7 +120,6 @@ function mapClick() {
   if (minprice_map) {filtered_coord = filtered_coord.filter(row => row.price >= minprice_map)};
   if (maxprice_map) {filtered_coord = filtered_coord.filter(row => row.price <= maxprice_map && row.price >= minprice_map)};
   if (beds_map) {filtered_coord = filtered_coord.filter(row => row.bedrooms >= beds_map)};
-  if (accom_map) {filtered_coord = filtered_coord.filter(row => row.accommodates >= accom_map)};
   if (baths_map) {filtered_coord = filtered_coord.filter(row => row.bathrooms >= baths_map)};
   if (hoodname_map != "Select Neighborhood") {filtered_coord = filtered_coord.filter(row => row.neighborhood == hoodname_map)};
   if (sqft) {filtered_coord = filtered_coord.filter(row => row.square_foot >= sqft)};

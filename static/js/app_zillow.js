@@ -44,7 +44,6 @@ function buildTable(data) {
     let minprice = d3.select("#price").property("value");
     let maxprice = d3.select("#max_price").property("value");
     let beds = d3.select("#bedrooms").property("value");
-    let accom = d3.select("#accommodates").property("value");
     let baths = d3.select("#bathrooms").property("value");
     let hoodname = d3.select("#neighborhood").property("value");
     let sqft = d3.select("#square_foot").property("value");
@@ -56,7 +55,6 @@ function buildTable(data) {
     if (minprice) {filteredData = filteredData.filter(row => row.price >= minprice)};
     if (maxprice) {filteredData = filteredData.filter(row => row.price <= maxprice && row.price >= minprice)};
     if (beds) {filteredData = filteredData.filter(row => row.bedrooms >= beds)};
-    if (accom) {filteredData = filteredData.filter(row => row.accommodates >= accom)};
     if (baths) {filteredData = filteredData.filter(row => row.bathrooms >= baths)};
     if (hoodname != "Select Neighborhood") {filteredData = filteredData.filter(row => row.neighborhood == hoodname)};
     if (sqft) {filteredData = filteredData.filter(row => row.square_foot >= sqft)};
@@ -77,9 +75,9 @@ function ddmenu() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#neighborhood");
 
-  let neighborhood_name_list = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/neighborhood_name_list.json"
+  let zillow_data_neighborhood = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/zillow_data_neighborhood.json"
   // Use the list of neighborhood names to populate the select options
-  d3.json(neighborhood_name_list).then((data) => {
+  d3.json(zillow_data_neighborhood).then((data) => {
     var sampleHood = data.neighborhood;
 
     sampleHood.forEach((sample) => {
