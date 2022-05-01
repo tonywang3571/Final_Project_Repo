@@ -99,3 +99,21 @@ Our team intends to take a very collaborative approach to this project. Though o
 
 ## Communication Plan
 Our primary method of communication is via Slack, where we provide status updates and post questions to others in the group. In addition to communicating via Slack, our team has set up the project timeline and requirements in ClickUp, a project management software. The expectation of each of the members of the group is that they will adhere to all deliverable deadlines, and will ask for help from the group to complete any tasks that may delay submission of a deliverable. 
+
+
+
+# Technology Overview
+
+## Communication: Click Up, Slack
+
+## Data Sources: Kaggle.com and InsideAirBnB.com
+
+## Data ETL: Juypter Notebooks, Pandas, Matplotlib, sklearn, numpy, scipy
+
+## Databases: Postgres DB and SQL Lite
+
+## Web Component: Javascript, CSS, HTML, Heroku, JSON, Bootstrap, Google Maps and Places API, Flask App, Plotly
+
+## Visualization Component: Tableau
+
+## Presentation Slides: Google Slides
