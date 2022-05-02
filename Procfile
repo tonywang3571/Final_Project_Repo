@@ -1,0 +1,1 @@
+web: gunicorn airbnb_zillow_app.app:app
