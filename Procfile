@@ -1,1 +1,1 @@
-Web: gunicorn Portland_app.app:app
+Web: gunicorn app:app
