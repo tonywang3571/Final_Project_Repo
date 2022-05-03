@@ -129,5 +129,4 @@ dmypy.json
 .pyre/
 
 # Config files with API key
-config.js
 config.py
