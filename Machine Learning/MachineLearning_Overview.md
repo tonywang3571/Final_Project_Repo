@@ -36,6 +36,6 @@ We tested four different regression models: multivariate linear regression, SVM 
 
 
 ## Predictive Tool
-The AirBNB model was used to determine potential AirBNB price for the houses listed on the Zillow dataset. The results of the predictive tool were then utilized to identify the top listings for highest potential ROI based on average AirBNB listing price ($136/night) and occupancy (aka days rented per year) rate (82%) in Portland, Oregon. There were 55 listings returned that met these criteria, and would be the recommended targets for investors. The top listings can be found [here](*need url after merging)
+The AirBNB model was used to determine potential AirBNB price for the houses listed on the Zillow dataset. The results of the predictive tool were then utilized to identify the top listings for highest potential ROI based on average AirBNB listing price ($136/night) and occupancy (aka days rented per year) rate (82%) in Portland, Oregon. There were 55 listings returned that met these criteria, and would be the recommended targets for investors. The top listings can be found [here](https://github.com/tonywang3571/Final_Project_Repo/blob/master/Resources/TopListings.csv)
 
 The criteria for predicting the best investment locations could be tailored to the need of the investor. For example, one could restrict the price of the house, choose a specific number of bedrooms or bathrooms, or choose the neighborhood where the property should be located.
