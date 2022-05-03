@@ -1,13 +1,12 @@
 <!-- Using tableau file to build upon base html file -->
 <!-- specifically changing page title and body of webpage content -->
 {% extends "base.html" %}
-{% block title %}Tableau Data Page{% endblock %}
-{% block header %}Tableau Data Page{% endblock %}
+{% block title %}Explore Investment Opportunities{% endblock %}
 
 <!-- script that loads Tableau story into webpage -->
 {% block body %}
 <div class="container-fluid">
-    <div class='tableauPlaceholder' id='viz1650762003658' style='position: relative'>
+    <div class='tableauPlaceholder' id='viz1650762003658'>
         <noscript>
             <a href='#'>
                 <img alt='AirBNB | Zillow Listings and Tools ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PortlandAirBNBZillow&#47;Story1&#47;1_rss.png' style='border: none' />
@@ -33,7 +32,7 @@
     <script type='text/javascript'>
         var divElement = document.getElementById('viz1650762003658');
         var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width='1016px';vizElement.style.height='991px';
+        vizElement.style.width='1400px';vizElement.style.height='1100px';
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
