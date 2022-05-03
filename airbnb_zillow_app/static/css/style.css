@@ -12,7 +12,6 @@
   background-color: darkgrey;
   color: white;
   display: block;
-
 }
 
 .leaflet-popup-tip-container {
@@ -25,4 +24,8 @@
   width: 0px;
   height: 0px;
   border: 0px;
+}
+
+.navbar-brand a:hover{
+  color:greenyellow
 }
