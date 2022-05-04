@@ -106,8 +106,10 @@ function mapClick() {
   let beds_map = d3.select("#bedrooms").property("value");
   let baths_map = d3.select("#bathrooms").property("value");
   let hoodname_map = d3.select("#neighborhood").property("value");
-  let sqft = d3.select("#square_foot").property("value");
-  let ppsqft = d3.select("#price_per_square_foot").property("value");
+  let sqft_map = d3.select("#square_foot").property("value");
+  let maxsqft_map = d3.select("#max_square_foot").property("value");
+  let ppsqft_map = d3.select("#price_per_square_foot").property("value");
+  let maxppsqft_map = d3.select("#max_price_per_square_foot").property("value");
 
   // code that could be used for geoJSON. Could be progression compared to current code. 
   // let filteredMap = "https://raw.githubusercontent.com/tonywang3571/Final_Project_Repo/master/Resources/airbnb_geojson_data.json";
@@ -122,8 +124,10 @@ function mapClick() {
   if (beds_map) {filtered_coord = filtered_coord.filter(row => row.bedrooms >= beds_map)};
   if (baths_map) {filtered_coord = filtered_coord.filter(row => row.bathrooms >= baths_map)};
   if (hoodname_map != "Select Neighborhood") {filtered_coord = filtered_coord.filter(row => row.neighborhood == hoodname_map)};
-  if (sqft) {filtered_coord = filtered_coord.filter(row => row.square_foot >= sqft)};
-  if (ppsqft) {filtered_coord = filtered_coord.filter(row => row.price_per_square_foot >= ppsqft)};
+  if (sqft_map) {filtered_coord = filtered_coord.filter(row => row.square_foot >= sqft_map)};
+  if (maxsqft_map) {filtered_coord = filtered_coord.filter(row => row.square_foot <= maxsqft_map && row.price >= sqft_map)};
+  if (ppsqft_map) {filtered_coord = filtered_coord.filter(row => row.price_per_square_foot >= ppsqft_map)};
+  if (maxppsqft_map) {filtered_coord = filtered_coord.filter(row => row.price_per_square_foot <= maxppsqft_map && row.price >= ppsqft_map)};
 
 console.log(filtered_coord);
 
