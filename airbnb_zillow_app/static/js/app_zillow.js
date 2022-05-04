@@ -47,7 +47,9 @@ function buildTable(data) {
     let baths = d3.select("#bathrooms").property("value");
     let hoodname = d3.select("#neighborhood").property("value");
     let sqft = d3.select("#square_foot").property("value");
+    let maxsqft = d3.select("#max_square_foot").property("value");
     let ppsqft = d3.select("#price_per_square_foot").property("value");
+    let maxppsqft = d3.select("#max_price_per_square_foot").property("value");
 
     let filteredData = tableData;
 
@@ -58,7 +60,9 @@ function buildTable(data) {
     if (baths) {filteredData = filteredData.filter(row => row.bathrooms >= baths)};
     if (hoodname != "Select Neighborhood") {filteredData = filteredData.filter(row => row.neighborhood == hoodname)};
     if (sqft) {filteredData = filteredData.filter(row => row.square_foot >= sqft)};
+    if (maxsqft) {filteredData = filteredData.filter(row => row.square_foot <= maxsqft && row.price >= sqft)};
     if (ppsqft) {filteredData = filteredData.filter(row => row.price_per_square_foot >= ppsqft)};
+    if (maxppsqft) {filteredData = filteredData.filter(row => row.price_per_square_foot <= maxppsqft && row.price >= ppsqft)};
 
     // Rebuild the table using the filtered data
     //@NOTE: if no date was entered, then filteredData will
